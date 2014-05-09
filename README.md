@@ -1,10 +1,8 @@
 HTML5 Bones - The template that goes back to basics
 ===================================================
 
-- Author: Ian Devlin [iandevlin.com](http://iandevlin.com)
-- Twitter: [@iandevlin](http://twitter.com/iandevlin)
-- Website: [html5bones.com](http://html5bones.com)
-- Twitter: [@html5bones](http://twitter.com/html5bones)
+###This is my personal fork, the original project can be found here: [html5bones.com](http://html5bones.com)
+
 
 Purpose
 =======
