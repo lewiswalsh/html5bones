@@ -26,6 +26,7 @@
 	}
 	
 	.container {
+		@extend %cf;
 		width: 1170px;
 		padding: 15px;
 		margin: 0 auto 0 auto;
