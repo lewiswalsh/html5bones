@@ -147,3 +147,9 @@ p, table {
   @media (max-width: 768px) {
     .container {
       width: 100%; } }
+
+header {
+  text-align: left; }
+
+footer {
+  text-align: left; }
