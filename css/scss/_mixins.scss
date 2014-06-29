@@ -14,3 +14,9 @@
 		font-size: ($sizeValue * 10) + px;
 		font-size: $sizeValue + rem;
 	}
+	
+	@mixin rotate($deg){
+		transform: 			rotate($deg + deg);
+		-ms-transform: 		rotate($deg + deg); /* IE 9 */
+		-webkit-transform: 	rotate($deg + deg); /* Opera, Chrome, and Safari */
+	}
