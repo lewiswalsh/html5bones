@@ -7,10 +7,7 @@
 
 			concat: {   
 				dist: {
-					src: [
-						'js/src/*.js' // All JS in the js folder
-						// add more here, remember commas!
-					],
+					src: ['js/src/*.js'],
 					dest: 'js/production.js',
 				}
 			},
@@ -31,6 +28,23 @@
 						'css/style.css': 'css/scss/style.scss'
 					}
 				} 
+			},
+			
+			watch: {
+				scripts: {
+					files: ['js/src/*.js'],
+					tasks: ['concat', 'uglify'],
+					options: {
+						spawn: false
+					}
+				},
+				css: {
+					files: ['css/scss/*.scss', 'css/scss/includes/*.scss'],
+					tasks: ['sass'],
+					options: {
+						spawn: false
+					}
+				}
 			}
 			
 		});
@@ -39,8 +53,9 @@
 		grunt.loadNpmTasks('grunt-contrib-concat');
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-sass');
+		grunt.loadNpmTasks('grunt-contrib-watch');
 
 		// Where we tell Grunt what to do when we type "grunt" into the terminal.
-		grunt.registerTask('default', ['concat', 'uglify', 'sass']);
+		grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
 
 	};
