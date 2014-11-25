@@ -20,6 +20,8 @@
 		"grunt-contrib-concat": "*",
 		"grunt-contrib-uglify": "*",
 		"grunt-contrib-sass":	"*",
+		"grunt-postcss" 			: "*",
+		"autoprefixer-core"     : "*",
 		"grunt-contrib-watch":	"*"
 	}
 }

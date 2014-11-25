@@ -1,17 +1,17 @@
-	
+
 	module.exports = function(grunt) {
 
-		// Configuration goes here 
+		// Configuration goes here
 		grunt.initConfig({
 			pkg: grunt.file.readJSON('package.json'),
 
-			concat: {   
+			concat: {
 				dist: {
 					src: ['js/src/*.js'],
 					dest: 'js/production.js',
 				}
 			},
-			
+
 			uglify: {
 				build: {
 					src: 'js/production.js',
@@ -27,9 +27,22 @@
 					files: {
 						'css/style.css': 'css/scss/style.scss'
 					}
-				} 
+				}
 			},
-			
+
+			postcss: {
+				options: {
+					map: true,
+					processors: [
+					require('autoprefixer-core')({browsers: 'last 1 version'}).postcss
+
+					]
+				},
+				dist: {
+					src: 'css/*.css'
+				}
+			},
+
 			watch: {
 				scripts: {
 					files: ['js/src/*.js'],
@@ -40,22 +53,23 @@
 				},
 				css: {
 					files: ['css/scss/*.scss', 'css/scss/includes/*.scss'],
-					tasks: ['sass'],
+					tasks: ['sass', 'postcss'],
 					options: {
 						spawn: false
 					}
 				}
 			}
-			
+
 		});
 
 		// Where we tell Grunt we plan to use this plug-in.
 		grunt.loadNpmTasks('grunt-contrib-concat');
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-sass');
+		grunt.loadNpmTasks('grunt-postcss');
 		grunt.loadNpmTasks('grunt-contrib-watch');
 
 		// Where we tell Grunt what to do when we type "grunt" into the terminal.
-		grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
+		grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss', 'watch']);
 
 	};
