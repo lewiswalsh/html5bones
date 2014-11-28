@@ -10,16 +10,16 @@
 	<!-- HTML5Shiv with Print --><!--[if lt IE 9]><script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv-printshiv.min.js' media='all'></script><![endif]-->
 </head>
 <body>
- 
+
 	<header role='banner' class='container'>
-		<h2>A title</h2>				
+		<h2>A title</h2>
 	</header>
-	
+
 	<nav role='navigation'><!-- <nav> does not have to appear in <header> and does not need to be unique -->
 	</nav>
-	
+
 	<div class='container'><!-- to wrap the whole site a <div> is still the best option -->
-	
+
 		<main role='main'><!-- only ONE instance of this allowed. Wraps the key site content -->
 
 			<header>
@@ -27,33 +27,33 @@
 				<nav role='navigation'><!-- A second <nav> could be used for page navigation -->
 				</nav>
 			</header>
-			
+
 			<article><!-- More than one <article> can appear on a page -->
 				<h3>A lesser title</h3>
 				<p>Blah, blah, blah!</p>
 			</article>
-			
+
 		</main>
-		
+
 		<aside role='complementary'><!-- role='complementary' used as the content supports the content of the main element -->
 			<h3>A lesser title</h3>
 			<p>Blah, blah, blah!</p>
 		</aside>
-		
+
 	</div>
-	
+
 	<footer role='contentinfo' class='container'><!-- role='contentinfo' is used as metadata relavent to page appears in this -->
 		<!-- A duplicate of the site navigation need NOT be in a <nav> element -->
 		<small>Copyright &copy; <time datetime='2014'>2014</time></small><!-- note <time> element -->
 	</footer>
-	
-	<script src='js/jquery-2.1.1.min.js'></script>
-	<script src='js/production.min.js'></script>
+
+	<script async src='js/jquery-2.1.1.min.js'></script>
+	<script async src='js/production.min.js'></script>
 	<script>
 		jQuery(document).ready(function($){
-			
+
 		});
 	</script>
-	
+
 </body>
 </html>
