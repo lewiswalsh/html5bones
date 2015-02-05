@@ -24,9 +24,13 @@
 					options: {
 						style: 'compressed'
 					},
-					files: {
-						'css/style.css': 'css/scss/style.scss'
-					}
+					files: [{
+						expand: true,
+						cwd: './css/scss',
+						src: ['*.scss'],
+						dest: './css',
+						ext: '.css'
+					}]
 				}
 			},
 
